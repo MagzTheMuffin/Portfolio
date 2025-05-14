@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.22ba4180.css",
-    "main.js": "/Portfolio/static/js/main.46405dc4.js",
+    "main.css": "/Portfolio/static/css/main.98b17017.css",
+    "main.js": "/Portfolio/static/js/main.48958445.js",
     "static/media/CmagriResume.pdf": "/Portfolio/static/media/CmagriResume.05383c27a12b58062652.pdf",
     "index.html": "/Portfolio/index.html",
-    "main.22ba4180.css.map": "/Portfolio/static/css/main.22ba4180.css.map",
-    "main.46405dc4.js.map": "/Portfolio/static/js/main.46405dc4.js.map"
+    "main.98b17017.css.map": "/Portfolio/static/css/main.98b17017.css.map",
+    "main.48958445.js.map": "/Portfolio/static/js/main.48958445.js.map"
   },
   "entrypoints": [
-    "static/css/main.22ba4180.css",
-    "static/js/main.46405dc4.js"
+    "static/css/main.98b17017.css",
+    "static/js/main.48958445.js"
   ]
 }
