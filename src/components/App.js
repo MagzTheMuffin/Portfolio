@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import Carousel from './Carousel';
+import PATH from './PATH';
 import ProjectsPage from './ProjectsPage';
 import Header from './Header'; // Import the new Header component
 import './App.css';
@@ -42,7 +43,7 @@ const hobbies = [
       {
         title: "Game Design",
         description: "I enjoy designing indie games that combine storytelling, mechanics, and aesthetic design. I use Godot and Unity to build out prototypes and love working on complex mechanics like procedural generation and pathfinding. Game design allows me to merge creativity with logic in a really engaging way.",
-        imageArray: ["/photos/gamejams.png", "/photos/path2.png"],
+        imageArray: ["/photos/gamejams.webp", "/photos/path2.webp"],
         imageSize: { width: "220px", height: "220px" }, 
       },
   {
@@ -56,7 +57,7 @@ const hobbies = [
     title: "Cooking & Food",
     description:
       "I love cooking and exploring different cuisines, from slow-cooked stews to sushi. Cooking allows me to disconnect from my digital environment and create something tangible and shareable.",
-    imageArray: ["/photos/food1.jpg", "/photos/food2.jpg", "/photos/food3.jpg","/photos/food4.jpg"],
+    imageArray: ["/photos/food1.webp", "/photos/food2.webp", "/photos/food3.webp","/photos/food4.webp"],
     imageSize: { width: "220px", height: "293.3px" }, 
   },
 ];
@@ -84,7 +85,7 @@ const hobbies = [
           <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-teal-400">
             {/* Replace 'your-photo.jpg' with your actual image path */}
             <img 
-              src="/photos/Face.png" 
+              src="/photos/face2.webp" 
               alt="Charlie Magri" 
               className="w-full h-full object-cover"
             />
@@ -110,6 +111,31 @@ const hobbies = [
         <h3 className="text-2xl mt-12 mb-4">Back End & Embedded</h3>
         <Carousel items={backEndSkills} />
       </section>
+      
+      {/* Upcoming Release Section */}
+    <section className="container mx-auto px-8 mb-16 fade-in-section">
+      <h2 className="text-4xl font-light mb-8">Upcoming Release</h2>
+      <div
+        className="relative rounded-3xl overflow-hidden shadow-xl"
+        style={{ height: "400px", backgroundImage: `url('/photos/backround1.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="bg-grey/10 p-12 rounded-2xl text-center backdrop-blur-sm">
+            <h3 className="text-3xl font-semibold text-grey mb-6">PATH</h3>
+            
+            <Link
+              to="/PATH"
+              onClick={() => window.scrollTo(0, 0)}
+              className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300"
+            >
+             Take Me There →
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
       <section className="container mx-auto px-8 mb-16 fade-in-section">
     </section>
@@ -140,6 +166,7 @@ const App = () => {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetail />} />
         <Route path="/resume" element={<ResumePage />} />
+        <Route path="/PATH" element={<PATH />} />
       </Routes>
       <Footer ref={footerRef} />
     </Router>

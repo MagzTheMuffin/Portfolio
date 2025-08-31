@@ -34,6 +34,7 @@ const Header = ({ onContactClick }) => {
         <Link to="/projects" className="hover:underline">Projects</Link>
         <a href="#contact" onClick={handleContactClick} className="hover:underline">Contact</a>
         <Link to="/resume" className="hover:underline">Resume</Link>
+        <Link to="/PATH" className="hover:underline">PATH</Link>
       </nav>
     </header>
   );
