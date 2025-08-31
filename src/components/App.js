@@ -48,14 +48,14 @@ const hobbies = [
   {
     title: "Pixel Art",
     description:
-      "Pixel art is my favorite visual medium — I create custom sprites and tilesets for my games, focusing on animations, lighting, and retro-inspired designs. It gives me a visual break from coding and helps me enhance the look of my projects with a distinct personal style.",
+      "Pixel art is my favorite visual medium, I create custom sprites and tilesets for my games, focusing on animations, lighting, and retro-inspired designs. It gives me a visual break from coding and helps me enhance the look of my projects with a distinct personal style.",
     imageArray: ["/gifs/burgerjump.gif", "/gifs/hoecycleF.gif", "gifs/port.gif"],
     reverse: true,
   },
   {
     title: "Cooking & Food",
     description:
-      "I love cooking and exploring different cuisines — from slow-cooked stews to sushi. Cooking allows me to disconnect from my digital environment and create something tangible and shareable.",
+      "I love cooking and exploring different cuisines, from slow-cooked stews to sushi. Cooking allows me to disconnect from my digital environment and create something tangible and shareable.",
     imageArray: ["/photos/food1.jpg", "/photos/food2.jpg", "/photos/food3.jpg","/photos/food4.jpg"],
     imageSize: { width: "220px", height: "293.3px" }, 
   },

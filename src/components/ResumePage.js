@@ -20,12 +20,12 @@ const ResumePage = () => {
 
         {/* PDF Embed */}
         <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700">
-          <iframe
-            src={resumePDF}
+        <iframe
+            src={`${resumePDF}#zoom=65`}
             title="Charlie Magri Resume"
-            className="w-full h-[80vh]"
+            className="w-full h-[95vh]"
             frameBorder="0"
-          ></iframe>
+          />
         </div>
       </div>
     </div>
