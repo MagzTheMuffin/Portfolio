@@ -30,7 +30,7 @@ const Header = ({ onContactClick }) => {
   return (
     <header className="js-header sticky-header sticky top-0 bg-black text-white z-50 shadow-md">
       <nav className="flex justify-center items-center gap-x-8 py-4">
-        <Link to="/" className="hover:underline">Home</Link>
+        <Link to="/portfolio/" className="hover:underline">Home</Link>
         <Link to="/projects" className="hover:underline">Projects</Link>
         <a href="#contact" onClick={handleContactClick} className="hover:underline">Contact</a>
         <Link to="/resume" className="hover:underline">Resume</Link>

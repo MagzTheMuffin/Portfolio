@@ -7,7 +7,7 @@ import PATH from './PATH';
 import ProjectsPage from './ProjectsPage';
 import Header from './Header'; // Import the new Header component
 import './App.css';
-import ProjectDetail from './projectdetails'; // create this later
+import ProjectDetail from './projectdetails'; 
 import ResumePage from './ResumePage';
 import Footer from './Footer';
 import HobbyCard from './HobbyCard';
@@ -39,28 +39,42 @@ const Home = () => {
     return () => observer.disconnect(); // Clean up
   }, []);
 
-const hobbies = [
-      {
-        title: "Game Design",
-        description: "I enjoy designing indie games that combine storytelling, mechanics, and aesthetic design. I use Godot and Unity to build out prototypes and love working on complex mechanics like procedural generation and pathfinding. Game design allows me to merge creativity with logic in a really engaging way.",
-        imageArray: ["/photos/gamejams.webp", "/photos/path2.webp"],
-        imageSize: { width: "220px", height: "220px" }, 
-      },
-  {
-    title: "Pixel Art",
-    description:
-      "Pixel art is my favorite visual medium, I create custom sprites and tilesets for my games, focusing on animations, lighting, and retro-inspired designs. It gives me a visual break from coding and helps me enhance the look of my projects with a distinct personal style.",
-    imageArray: ["/gifs/burgerjump.gif", "/gifs/hoecycleF.gif", "gifs/port.gif"],
-    reverse: true,
-  },
-  {
-    title: "Cooking & Food",
-    description:
-      "I love cooking and exploring different cuisines, from slow-cooked stews to sushi. Cooking allows me to disconnect from my digital environment and create something tangible and shareable.",
-    imageArray: ["/photos/food1.webp", "/photos/food2.webp", "/photos/food3.webp","/photos/food4.webp"],
-    imageSize: { width: "220px", height: "293.3px" }, 
-  },
-];
+  const hobbies = [
+    {
+      title: "Game Design",
+      description:
+        "I enjoy designing indie games that combine storytelling, mechanics, and aesthetic design. I use Godot and Unity to build out prototypes and love working on complex mechanics like procedural generation and pathfinding. Game design allows me to merge creativity with logic in a really engaging way.",
+      imageArray: [
+        `${process.env.PUBLIC_URL}/photos/gamejams.webp`,
+        `${process.env.PUBLIC_URL}/photos/path2.webp`,
+      ],
+      imageSize: { width: "220px", height: "220px" },
+    },
+    {
+      title: "Pixel Art",
+      description:
+        "Pixel art is my favorite visual medium, I create custom sprites and tilesets for my games, focusing on animations, lighting, and retro-inspired designs. It gives me a visual break from coding and helps me enhance the look of my projects with a distinct personal style.",
+      imageArray: [
+        `${process.env.PUBLIC_URL}/gifs/burgerjump.gif`,
+        `${process.env.PUBLIC_URL}/gifs/hoecycleF.gif`,
+        `${process.env.PUBLIC_URL}/gifs/port.gif`,
+      ],
+      reverse: true,
+    },
+    {
+      title: "Cooking & Food",
+      description:
+        "I love cooking and exploring different cuisines, from slow-cooked stews to sushi. Cooking allows me to disconnect from my digital environment and create something tangible and shareable.",
+      imageArray: [
+        `${process.env.PUBLIC_URL}/photos/food1.webp`,
+        `${process.env.PUBLIC_URL}/photos/food2.webp`,
+        `${process.env.PUBLIC_URL}/photos/food3.webp`,
+        `${process.env.PUBLIC_URL}/photos/food4.webp`,
+      ],
+      imageSize: { width: "220px", height: "293.3px" },
+    },
+  ];
+  
 
 
 
@@ -85,7 +99,7 @@ const hobbies = [
           <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-teal-400">
             {/* Replace 'your-photo.jpg' with your actual image path */}
             <img 
-              src="/photos/face2.webp" 
+              src={`${process.env.PUBLIC_URL}/photos/face2.webp`} 
               alt="Charlie Magri" 
               className="w-full h-full object-cover"
             />
@@ -113,27 +127,34 @@ const hobbies = [
       </section>
       
       {/* Upcoming Release Section */}
-    <section className="container mx-auto px-8 mb-16 fade-in-section">
-      <h2 className="text-4xl font-light mb-8">Upcoming Release</h2>
-      <div
-        className="relative rounded-3xl overflow-hidden shadow-xl"
-        style={{ height: "400px", backgroundImage: `url('/photos/backround1.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      >
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <div className="bg-grey/10 p-12 rounded-2xl text-center backdrop-blur-sm">
-            <h3 className="text-3xl font-semibold text-grey mb-6">PATH</h3>
-            
-            <Link
-              to="/PATH"
-              onClick={() => window.scrollTo(0, 0)}
-              className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300"
-            >
-             Take Me There →
-            </Link>
-          </div>
-        </div>
+<section className="container mx-auto px-8 mb-16 fade-in-section">
+  <h2 className="text-4xl font-light mb-8">Upcoming Release</h2>
+
+  <div
+    className="relative rounded-3xl overflow-hidden shadow-xl"
+    style={{
+      height: "400px",
+      backgroundImage: `url(${process.env.PUBLIC_URL}/photos/backround1.webp)`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* Full overlay with blur + dark tint */}
+    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <div className="p-12 rounded-2xl text-center">
+        <h3 className="text-3xl font-semibold text-grey mb-6">PATH</h3>
+
+        <Link
+          to="/PATH"
+          onClick={() => window.scrollTo(0, 0)}
+          className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300"
+        >
+          Take Me There →
+        </Link>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
 
@@ -162,7 +183,7 @@ const App = () => {
     <Router>
       <Header onContactClick={scrollToFooter} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/portfolio/" element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetail />} />
         <Route path="/resume" element={<ResumePage />} />
